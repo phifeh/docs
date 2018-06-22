@@ -124,9 +124,8 @@ class Messages {
     const message = await this.get(id);
     // Find the index of the message in our message array
     const index = this.messages.indexOf(message);
-
     // Remove the found message from our array
-    this.messages.splice(index, 1);
+    this.messages = this.messages.filter(({i:messsageId})=>messageId!==id);
 
     // Return the removed message
     return message;
